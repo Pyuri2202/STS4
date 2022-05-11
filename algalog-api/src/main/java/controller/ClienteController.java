@@ -1,4 +1,4 @@
-package com.algaworks.algalog.api.controller;
+package controller;
 
 
 import java.util.List;
@@ -20,10 +20,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.algaworks.algalog.api.domain.model.Cliente;
-import com.algaworks.algalog.domain.repository.ClienteRepository;
+import domain.model.Cliente;
+import repository.ClienteRepository;
 
 import lombok.AllArgsConstructor;
+
 
 @AllArgsConstructor
 @RestController
