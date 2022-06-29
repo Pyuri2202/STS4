@@ -8,6 +8,7 @@ import javax.persistence.PersistenceContext;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.integration.IntegrationProperties.RSocket.Client;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -21,7 +22,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import domain.model.Cliente;
-import repository.ClienteRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import lombok.AllArgsConstructor;
 
@@ -38,12 +39,12 @@ public class ClienteController {
 	private EntityManager manager;
 	
 	@GetMapping("/clientes")
-	public List<Cliente> Listar() {
+	public List<Client> Listar() {
 	return clienteRepository.findAll();
 	}
 	
 	@GetMapping("/clientes/{clienteId")
-	public ResponseEntity<Cliente> buscar(@PathVariable Long clienteId) {
+	public ResponseEntity<Client> buscar(@PathVariable Long clienteId) {
 		return clienteRepository.findById(clienteId)
 			.map(ResponseEntity::ok)
 			.orElse(ResponseEntity.notFound().build()); }
@@ -61,7 +62,7 @@ public class ClienteController {
 			return ResponseEntity.notFound().build();
 		}
 		
-		cliente.setId(clienteId);
+		cliente.setId(clienteId); 
 		cliente = clienteRepository.save(cliente);
 		
 		return ResponseEntity.ok(cliente);

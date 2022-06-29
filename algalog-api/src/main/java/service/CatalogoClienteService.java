@@ -15,14 +15,13 @@ public class CatalogoClienteService {
 	
 	@Transactional
 	public Cliente salvar(Cliente cliente) {
-		return ClienteRepository.save(cliente);
+		return clienteRepository.save(cliente); }
 		
 		
 	@Transactional	
 	public void excluir(long clienteId) {
-		clienteRepository.deleteAllById(clienteId);
+		clienteRepository.deleteById(clienteId);
 	}
-	}
+	
 
 }
-	

@@ -1,9 +1,9 @@
 eclipse.preferences.version=1
 org.springframework.ide.eclipse.boot.wizard.PopularityTracker.data-jpa=3
 org.springframework.ide.eclipse.boot.wizard.PopularityTracker.flyway=3
-org.springframework.ide.eclipse.boot.wizard.PopularityTracker.lombok=4
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.lombok=5
 org.springframework.ide.eclipse.boot.wizard.PopularityTracker.mysql=2
-org.springframework.ide.eclipse.boot.wizard.PopularityTracker.validation=2
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.validation=3
 org.springframework.ide.eclipse.boot.wizard.PopularityTracker.web=3
 org.springframework.ide.eclipse.boot.wizard.PreferredSelections.artifactId=algalog-api
 org.springframework.ide.eclipse.boot.wizard.PreferredSelections.bootVersion=2.6.3
