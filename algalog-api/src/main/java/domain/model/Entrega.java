@@ -1,5 +1,7 @@
 package domain.model;
 
+//Classe criada na aula 3.1 / 2:12
+
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.time.OffsetDateTime;

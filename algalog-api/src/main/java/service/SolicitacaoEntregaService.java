@@ -1,6 +1,10 @@
 package service;
 
+// Classe riada na aula 3.1 / 21:04
+
 import java.time.LocalDateTime;
+
+import javax.validation.constraints.NotNull;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,15 +15,16 @@ import lombok.AllArgsConstructor;
 import repository.ClienteRepository;
 import repository.EntregaRepository;
 
+@NotNull
 @AllArgsConstructor
 @Service
 public class SolicitacaoEntregaService {
 
-	private EntregaRepository entregareposiroty;
+private EntregaRepository entregareposiroty;
 	
 	@Transactional
 	public Entrega solicitar(Entrega entrega) {
-		//ClienteRepository.findAllById(entrega.id);
+		ClienteRepository.findAllById(entrega);
 		
 		
 		entrega.setStatus(StatusEntrega.PENDENTE);

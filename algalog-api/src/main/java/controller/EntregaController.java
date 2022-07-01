@@ -1,5 +1,7 @@
 package controller;
 
+//classe criada na aula 3.1 ; 24:47
+
 import java.util.List;
 
 import javax.validation.Valid;
@@ -18,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import assembler.EntregaAssembler;
 import domain.model.Entrega;
 import domain.model.EntregaModel;
+import domain.model.input.EntregaInput;
 import lombok.AllArgsConstructor;
 import repository.EntregaRepository;
 import service.SolicitacaoEntregaService;
@@ -26,18 +29,20 @@ import common.ModelMapperConfig;
 @AllArgsConstructor
 @RestController
 @RequestMapping("/entregas")
+
 public class EntregaController {
 
 	private EntregaRepository entregarepository;
 	private SolicitacaoEntregaService solicitacaoEntregaService;
-	private ModelMapper modelMapper;
-	
+	private EntregaAssembler entregaAssembler;
 	
 	
 	@PostMapping
 	@ResponseStatus(code = HttpStatus.CREATED)
-	public Entrega solicitar(@Valid @RequestBody Entrega entrega) {
-		return solicitacaoEntregaService.solicitar(entrega);
+	public EntregaModel solicitar(@Valid @RequestBody EntregaInput entregaInput) {
+		Entrega novaEntrega = entregaAssembler.toEntity(entregaInput);
+		Entrega entregaSolicitada = solicitacaoEntregaService.solicitar(entregaInput);
+		return entregaAssembler.toModel(entregaSolicitada);
 
 	}
 	@GetMapping

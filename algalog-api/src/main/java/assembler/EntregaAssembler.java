@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 import domain.model.Entrega;
 import domain.model.EntregaModel;
-
+import domain.model.input.EntregaInput;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
@@ -31,6 +31,12 @@ public class EntregaAssembler {
 				.map(this::toModel)
 				.collect(Collectors.toList());
 	}
+	
+	public Entrega toEntity(EntregaInput entregaInput) {
+		return modelMapper.map(entregaInput, Entrega.class);
+		
+	}
+		
 	public static List<EntregaModel> toColletionModel(List<Entrega> findAll) {
 		// TODO Auto-generated method stub
 		return null;
