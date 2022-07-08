@@ -1,5 +1,7 @@
 package domain.model.input;
 
+//Classe criada na aula 3.5 / 25:38
+
 import javax.persistence.Column;
 import javax.validation.constraints.NotBlank;
 

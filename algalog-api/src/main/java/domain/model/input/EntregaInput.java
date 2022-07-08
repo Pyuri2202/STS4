@@ -28,5 +28,4 @@ public class EntregaInput {
 	
 	private OffsetDateTime dataFinalizacao;
 	
-	
 }

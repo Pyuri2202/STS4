@@ -41,7 +41,7 @@ public class EntregaController {
 	@ResponseStatus(code = HttpStatus.CREATED)
 	public EntregaModel solicitar(@Valid @RequestBody EntregaInput entregaInput) {
 		Entrega novaEntrega = entregaAssembler.toEntity(entregaInput);
-		Entrega entregaSolicitada = solicitacaoEntregaService.solicitar(entregaInput);
+		Entrega entregaSolicitada = solicitacaoEntregaService.solicitar(novaEntrega);
 		return entregaAssembler.toModel(entregaSolicitada);
 
 	}
@@ -50,7 +50,7 @@ public class EntregaController {
 		return EntregaAssembler.toColletionModel(entregarepository.findAll());
 	}
 	@GetMapping("/entregaId")
-	public ResponseEntity<EntregaModel> buscar(@PathVariable Long entregaId) {
+	public ResponseEntity<Entrega> b1uscar(@PathVariable Long entregaId) {
 		return entregarepository.findById(entregaId)
 				.map(entrega -> ResponseEntity.ok(entregaAssembler.toModel(entrega)))
 				.orElse(ResponseEntity.notFound().build());

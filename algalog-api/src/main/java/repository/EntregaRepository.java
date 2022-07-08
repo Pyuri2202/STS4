@@ -1,6 +1,6 @@
 package repository;
 
-
+//classe criada na aula 3.1 Implementando solicitacao de entrega 18:46
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import domain.model.Entrega;
 
-		//classe criada na aula 3.1 Implementando solicitacao de entrega 18:46
+		
 @Repository
 public class EntregaRepository extends JpaRepositoryExtension<Entrega, Long>{
   

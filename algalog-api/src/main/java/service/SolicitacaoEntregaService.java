@@ -14,6 +14,7 @@ import domain.model.StatusEntrega;
 import lombok.AllArgsConstructor;
 import repository.ClienteRepository;
 import repository.EntregaRepository;
+import service.CatalogoClienteService;
 
 @NotNull
 @AllArgsConstructor
@@ -24,7 +25,7 @@ private EntregaRepository entregareposiroty;
 	
 	@Transactional
 	public Entrega solicitar(Entrega entrega) {
-		ClienteRepository.findAllById(entrega);
+		Cliente cliente = catalogoClienteService.buscar(entrega.getCliente(.getId()) ;
 		
 		
 		entrega.setStatus(StatusEntrega.PENDENTE);

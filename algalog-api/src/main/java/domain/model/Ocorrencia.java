@@ -1,5 +1,7 @@
 package domain.model;
 
+//Classe criada na aula 3.6 / 00:45 
+
 import java.time.OffsetDateTime;
 
 import javax.persistence.Entity;
