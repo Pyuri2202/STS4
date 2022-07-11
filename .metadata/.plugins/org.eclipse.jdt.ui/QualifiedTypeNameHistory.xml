@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="javax.persistence.ManyToOne"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.stream.Collectors"/>
     <fullyQualifiedTypeName name="repository.ClienteRepository"/>
@@ -22,7 +21,6 @@
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ResponseStatus"/>
     <fullyQualifiedTypeName name="java.lang.Boolean"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
-    <fullyQualifiedTypeName name="repository.EntregaRepository"/>
     <fullyQualifiedTypeName name="org.modelmapper.internal.bytebuddy.implementation.bytecode.Throw"/>
     <fullyQualifiedTypeName name="net.bytebuddy.implementation.bytecode.Throw"/>
     <fullyQualifiedTypeName name="domain.model.StatusEntrega"/>
@@ -39,7 +37,6 @@
     <fullyQualifiedTypeName name="javax.annotation.Generated"/>
     <fullyQualifiedTypeName name="javax.persistence.IdClass"/>
     <fullyQualifiedTypeName name="domain.model.input.ClienteIdInput"/>
-    <fullyQualifiedTypeName name="assembler.OcorrenciaAssembler"/>
     <fullyQualifiedTypeName name="javax.validation.constraints.NotBlank"/>
     <fullyQualifiedTypeName name="javax.validation.Valid"/>
     <fullyQualifiedTypeName name="java.math.BigDecimal"/>
@@ -59,5 +56,8 @@
     <fullyQualifiedTypeName name="org.springframework.web.context.request.WebRequest"/>
     <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonInclude"/>
     <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonInclude.Include"/>
+    <fullyQualifiedTypeName name="domain.model.input.OcorrenciaInput"/>
+    <fullyQualifiedTypeName name="repository.EntregaRepository"/>
     <fullyQualifiedTypeName name="domain.model.exception.NegocioException"/>
+    <fullyQualifiedTypeName name="assembler.OcorrenciaAssembler"/>
 </qualifiedTypeNameHistroy>

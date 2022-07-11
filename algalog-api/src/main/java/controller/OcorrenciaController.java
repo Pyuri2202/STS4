@@ -35,7 +35,7 @@ public class OcorrenciaController {
 		Ocorrencia ocorrenciaResgistrada = registroOcorrenciaService
 				.registrar(entregaId, ocorrenciaInput.getClass());		
 			
-		return OcorrenciaAssembler.toModel(ocorrenciaResgistrada);
+		return ocorrenciaAmssembler.toModel(ocorrenciaResgistrada);
 
 	}
 

@@ -50,7 +50,7 @@ public class EntregaController {
 		return EntregaAssembler.toColletionModel(entregarepository.findAll());
 	}
 	@GetMapping("/entregaId")
-	public ResponseEntity<Entrega> b1uscar(@PathVariable Long entregaId) {
+	public ResponseEntity<Entrega> buscar(@PathVariable Long entregaId) {
 		return entregarepository.findById(entregaId)
 				.map(entrega -> ResponseEntity.ok(entregaAssembler.toModel(entrega)))
 				.orElse(ResponseEntity.notFound().build());

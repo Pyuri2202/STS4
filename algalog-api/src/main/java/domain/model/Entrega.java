@@ -84,12 +84,12 @@ public class Entrega {
 		}
 		
 		setStatus(StatusEntrega.FINALIZADA );
-	//	setDataFinalizacao(OffsetDateTime.now());
+		setDataFinalizacao(OffsetDateTime.now());
 		
-	//	public boolean naopodeSerFinalizada(); {
-	//		return StatusEntrega.PENDENTE.equals(getStatus());
+		public boolean naopodeSerFinalizada() {
+			return StatusEntrega.PENDENTE.equals(getStatus());
 		}
-	//}
+	}
 
 	private boolean naopodeSerFinalizada() {
 		// TODO Auto-generated method stub
