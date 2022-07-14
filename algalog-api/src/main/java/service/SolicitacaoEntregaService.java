@@ -1,6 +1,6 @@
 package service;
 
-// Classe riada na aula 3.1 / 21:04
+// Classe criada na aula 3.1 / 21:04
 
 import java.time.LocalDateTime;
 
@@ -9,6 +9,7 @@ import javax.validation.constraints.NotNull;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import domain.model.Cliente;
 import domain.model.Entrega;
 import domain.model.StatusEntrega;
 import lombok.AllArgsConstructor;
@@ -25,7 +26,7 @@ private EntregaRepository entregareposiroty;
 	
 	@Transactional
 	public Entrega solicitar(Entrega entrega) {
-		Cliente cliente = catalogoClienteService.buscar(entrega.getCliente(.getId()) ;
+		Cliente cliente = CatalogoClienteService.buscar(entrega.getCliente(.getId()) ;
 		
 		
 		entrega.setStatus(StatusEntrega.PENDENTE);

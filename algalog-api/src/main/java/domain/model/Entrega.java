@@ -66,7 +66,7 @@ public class Entrega {
 		ocorrencia.setDescricao(descricao);
 		ocorrencia.setEntrega(this);
 		
-	//	this.getOcorrencia().add(ocorrencia);
+		this.getOcorrencia().add(ocorrencia);
 		
 		return ocorrencia;
 		
