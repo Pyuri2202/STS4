@@ -40,7 +40,7 @@ public class EntregaController {
 	private EntregaAssembler entregaAssembler;
 	
 	
-	@PostMapping
+	@PostMapping 
 	@ResponseStatus(code = HttpStatus.CREATED)
 	public EntregaModel solicitar(@Valid @RequestBody EntregaInput entregaInput) {
 		Entrega novaEntrega = entregaAssembler.toEntity(entregaInput);
@@ -54,7 +54,7 @@ public class EntregaController {
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void finalizar(@PathVariable Long entregId) {
 		finalizacaoEntregaService.finalizar(entregId);
-		
+	
 	}
 	
 	@GetMapping
