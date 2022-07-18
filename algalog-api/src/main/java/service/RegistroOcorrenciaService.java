@@ -5,6 +5,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import domain.model.Entrega;
 import domain.model.Ocorrencia;
+import domain.model.exception.NegocioException;
 import lombok.AllArgsConstructor;
 import repository.EntregaRepository;
 

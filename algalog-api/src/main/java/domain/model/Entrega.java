@@ -95,10 +95,5 @@ public class Entrega {
 		// TODO Auto-generated method stub
 		return false;
 	}
-
-	public void setStatus(StatusEntrega pendente) {
-		// TODO Auto-generated method stub
-		
-	}
 	
 }

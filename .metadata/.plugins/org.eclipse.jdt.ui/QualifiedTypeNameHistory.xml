@@ -2,7 +2,6 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
-    <fullyQualifiedTypeName name="service.RegistroOcorrenciaService"/>
     <fullyQualifiedTypeName name="domain.model.OcorrenciaInput"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
     <fullyQualifiedTypeName name="service.BuscaEntregaService"/>
@@ -51,7 +50,6 @@
     <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonInclude.Include"/>
     <fullyQualifiedTypeName name="domain.model.input.OcorrenciaInput"/>
     <fullyQualifiedTypeName name="repository.EntregaRepository"/>
-    <fullyQualifiedTypeName name="domain.model.exception.NegocioException"/>
     <fullyQualifiedTypeName name="assembler.OcorrenciaAssembler"/>
     <fullyQualifiedTypeName name="repository.ClienteRepository"/>
     <fullyQualifiedTypeName name="domain.model.Cliente"/>
@@ -60,4 +58,6 @@
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ResponseStatus"/>
     <fullyQualifiedTypeName name="service.FinalizacaoEntregaService"/>
     <fullyQualifiedTypeName name="domain.model.exception.EntidadeNaoEncontradaException"/>
+    <fullyQualifiedTypeName name="domain.model.exception.NegocioException"/>
+    <fullyQualifiedTypeName name="service.RegistroOcorrenciaService"/>
 </qualifiedTypeNameHistroy>

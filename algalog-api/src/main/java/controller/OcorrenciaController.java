@@ -33,7 +33,7 @@ public class OcorrenciaController {
 			@Valid @RequestBody OcorrenciaInput ocorrenciaInput) {
 				
 		Ocorrencia ocorrenciaResgistrada = registroOcorrenciaService
-				.registrar(entregaId, ocorrenciaInput.getClass());		
+				.registrar(entregaId, ocorrenciaInput.getClass());
 			
 		return ocorrenciaAmssembler.toModel(ocorrenciaResgistrada);
 
