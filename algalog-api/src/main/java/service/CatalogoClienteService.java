@@ -24,16 +24,15 @@ public class CatalogoClienteService {
 			
 		if (emailEmUso) {
 			throw new NegocioException("já existe um cliente cadastrado com este e-mail.");
+		
 		}
 		
 		return clienteRepository.save(cliente);
 	}
-		
-		
+			
 	@Transactional	
 	public void excluir(long clienteId) {
 		clienteRepository.deleteById(clienteId);
 	}
-	
 
 }

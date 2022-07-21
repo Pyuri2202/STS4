@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import assembler.EntregaAssembler;
+import assembler.OcorrenciaAssembler;
 import domain.model.Entrega;
 import domain.model.EntregaModel;
 import domain.model.input.EntregaInput;
@@ -27,6 +28,7 @@ import repository.EntregaRepository;
 import service.FinalizacaoEntregaService;
 import service.SolicitacaoEntregaService;
 import common.ModelMapperConfig; 
+import java.util.stream.Stream;
 
 @AllArgsConstructor
 @RestController
@@ -60,12 +62,15 @@ public class EntregaController {
 	@GetMapping
 	public List<EntregaModel> listar() {
 		return EntregaAssembler.toColletionModel(entregarepository.findAll());
+		
 	}
+	
 	@GetMapping("/entregaId")
 	public ResponseEntity<Entrega> buscar(@PathVariable Long entregaId) {
 		return entregarepository.findById(entregaId)
 				.map(entrega -> ResponseEntity.ok(entregaAssembler.toModel(entrega)))
 				.orElse(ResponseEntity.notFound().build());
+	
 	}
 	 
 }

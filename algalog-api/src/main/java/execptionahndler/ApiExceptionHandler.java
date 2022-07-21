@@ -1,4 +1,4 @@
-package execptionahndler;
+ package execptionahndler;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -15,10 +15,12 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
+
+import domain.model.exception.EntidadeNaoEncontradaException;
 import domain.model.exception.NegocioException;
 
 @ControllerAdvice
-public class ApiExceptionHandler extends ResponseEntityExceptionHandler{
+public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 	
 	@Override
 	protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
@@ -29,16 +31,22 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler{
 		for (ObjectError error : ex.getBindingResult().getAllErrors()) {
 			String nome = ((FieldError) error).getField();
 			String mensagem = error.getDefaultMessage();
-		}
 			
-		Problema problema = new Problema();
-		Problema.setStatus(status.value());
-		problema.setDataHora(LocalDateTime.now());
-		problema.setTitulo("Um ou mais campos estão inválidos. Faça o preenchimento correto e tente novamente"); 
-		problema.setCampos(); 
+		}
 		
-		return handleExceptionInternal(ex, problema, headers, status, request);
-	}
+			
+		@ExceptionHandler(EntidadeNaoEncontradaException.class)
+		public ResponseEntity<Object> handleEntidadeNaoEncontrada(EntidadeNaoEncontradaException ex, WebRequest request) {
+			HttpStatus status = HttpStatus.NOT_FOUND;
+			
+			Problema problema = new Problema();
+			Problema.setStatus(status.value());
+			problema.setDataHora(LocalDateTime.now());
+			problema.setTitulo(ex.getMessage()); 
+			
+			return handleExceptionInternal(ex, problema, new HttpHeaders() , status, request);
+					
+		}
 	
 	@ExceptionHandler(NegocioException.class)
 	public ResponseEntity<Object> handleNegocio(NegocioException ex, WebRequest request) {
