@@ -24,10 +24,14 @@ public class SolicitacaoEntregaService {
 
 private EntregaRepository entregareposiroty;
 	
+	//
+
 	@Transactional
 	public Entrega solicitar(Entrega entrega) {
 		Cliente cliente = CatalogoClienteService.buscar(entrega.getCliente(.getId()) ;
 		
+		
+	//
 		
 		entrega.setStatus(StatusEntrega.PENDENTE); 
 		entrega.setDataPedido(LocalDateTime.now());

@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="service.ValidationGroups"/>
-    <fullyQualifiedTypeName name="service.ValidationGroups.ClienteId"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
     <fullyQualifiedTypeName name="java.lang.Boolean"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
     <fullyQualifiedTypeName name="org.modelmapper.internal.bytebuddy.implementation.bytecode.Throw"/>
-    <fullyQualifiedTypeName name="net.bytebuddy.implementation.bytecode.Throw"/>
-    <fullyQualifiedTypeName name="domain.model.StatusEntrega"/>
-    <fullyQualifiedTypeName name="domain.model.EntregaModel"/>
     <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean"/>
     <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.support.JpaRepositoryFactory"/>
     <fullyQualifiedTypeName name="common.ModelMapperConfig"/>
-    <fullyQualifiedTypeName name="domain.model.Ocorrencia"/>
     <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
     <fullyQualifiedTypeName name="service.SolicitacaoEntregaService"/>
     <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.cdi.JpaRepositoryExtension"/>
@@ -23,7 +16,6 @@
     <fullyQualifiedTypeName name="javax.validation.constraints.NotBlank"/>
     <fullyQualifiedTypeName name="javax.validation.Valid"/>
     <fullyQualifiedTypeName name="java.math.BigDecimal"/>
-    <fullyQualifiedTypeName name="java.time.OffsetDateTime"/>
     <fullyQualifiedTypeName name="javax.validation.constraints.NotNull"/>
     <fullyQualifiedTypeName name="org.modelmapper.ModelMapper"/>
     <fullyQualifiedTypeName name="lombok.Getter"/>
@@ -42,22 +34,30 @@
     <fullyQualifiedTypeName name="repository.EntregaRepository"/>
     <fullyQualifiedTypeName name="repository.ClienteRepository"/>
     <fullyQualifiedTypeName name="domain.model.Cliente"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PutMapping"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ResponseStatus"/>
-    <fullyQualifiedTypeName name="service.FinalizacaoEntregaService"/>
-    <fullyQualifiedTypeName name="domain.model.exception.NegocioException"/>
     <fullyQualifiedTypeName name="service.RegistroOcorrenciaService"/>
     <fullyQualifiedTypeName name="javax.persistence.CascadeType"/>
     <fullyQualifiedTypeName name="domain.model.exception.EntidadeNaoEncontradaException"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
     <fullyQualifiedTypeName name="antlr.collections.List"/>
+    <fullyQualifiedTypeName name="java.util.stream.Collectors"/>
+    <fullyQualifiedTypeName name="org.apache.catalina.mapper.Mapper"/>
+    <fullyQualifiedTypeName name="assembler.OcorrenciaAssembler"/>
+    <fullyQualifiedTypeName name="java.util.stream.Stream"/>
+    <fullyQualifiedTypeName name="net.bytebuddy.implementation.bytecode.Throw"/>
+    <fullyQualifiedTypeName name="execptionahndler.ApiExceptionHandler"/>
+    <fullyQualifiedTypeName name="java.util.Optional"/>
+    <fullyQualifiedTypeName name="java.time.OffsetDateTime"/>
+    <fullyQualifiedTypeName name="domain.model.StatusEntrega"/>
+    <fullyQualifiedTypeName name="domain.model.EntregaModel"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ResponseStatus"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PutMapping"/>
+    <fullyQualifiedTypeName name="service.FinalizacaoEntregaService"/>
+    <fullyQualifiedTypeName name="domain.model.exception.NegocioException"/>
+    <fullyQualifiedTypeName name="domain.model.Ocorrencia"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="domain.model.OcorrenciaModel"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
     <fullyQualifiedTypeName name="service.BuscaEntregaService"/>
     <fullyQualifiedTypeName name="domain.model.Entrega"/>
-    <fullyQualifiedTypeName name="java.util.stream.Collectors"/>
-    <fullyQualifiedTypeName name="domain.model.OcorrenciaModel"/>
-    <fullyQualifiedTypeName name="org.apache.catalina.mapper.Mapper"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
-    <fullyQualifiedTypeName name="assembler.OcorrenciaAssembler"/>
-    <fullyQualifiedTypeName name="java.util.stream.Stream"/>
+    <fullyQualifiedTypeName name="java.lang.Long"/>
 </qualifiedTypeNameHistroy>

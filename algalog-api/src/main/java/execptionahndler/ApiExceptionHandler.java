@@ -28,6 +28,8 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 			HttpHeaders headers, HttpStatus status, WebRequest request) {
 		List<Problema.campo> campo = new ArrayList<>();
 		
+		//
+		
 		for (ObjectError error : ex.getBindingResult().getAllErrors()) {
 			String nome = ((FieldError) error).getField();
 			String mensagem = error.getDefaultMessage();

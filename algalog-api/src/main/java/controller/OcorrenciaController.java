@@ -36,19 +36,18 @@ public class OcorrenciaController {
 	@ResponseStatus(HttpStatus.CREATED)
 	public OcorrenciaModel registrar(@PathVariable long entregaId,
 			@Valid @RequestBody OcorrenciaInput ocorrenciaInput) {
-				
-		Ocorrencia ocorrenciaResgistrada = registroOcorrenciaService
-				.registrar(entregaId, ocorrenciaInput.getClass());
-			
-		return ocorrenciaAmssembler.toModel(ocorrenciaResgistrada);
 
+		// 3.6 / 19:15		
+		Ocorrencia ocorrenciaRegistrada = registroOcorrenciaService
+				.registrar(entregaId, ocorrenciaInput.getDescricao());
+			
+		  return ocorrenciaAmssembler.toModel(ocorrenciaRegistrada);	
 	}
 	
-	@GetMapping
-	public java.util.List<OcorrenciaModel> listar(@PathVariable Long entregaId) {
-		Entrega entrega = buscaEntregaService.Buscar(entregaId);
-		
-		return ocorrenciaAmssembler.toCollectionModel(entrega.getOcorrencias());
+ 	public java.util.List<OcorrenciaModel> listar(@PathVariable Long entregaId) {
+ 		Entrega entrega = buscaEntregaService.buscar(entregaId);
+
+ 		return ocorrenciaAmssembler.toCollectionModel(entrega.getOcorrencias());
 	}
 
 } 

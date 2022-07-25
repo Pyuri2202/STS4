@@ -72,29 +72,38 @@ public class Entrega {
 		return ocorrencia;
 		
 	}
-	
+	/*
 	private BigDecimal getOcorrencia() {
 		// TODO Auto-generated method stub
 		return null;
-	}
+	}*/
 
+	//3.7 / 05:20
 	public void finalizar() {
-		if (!naopodeSerFinalizada()) {
-			throw new NegocioException ("Entrega não pode ser finalizada");
-	
+		if (!naoPodeSerFinalizada()) {
+			throw new NegocioException("Entrega nao pode ser finalizada");
 		}
 		
-		setStatus(StatusEntrega.FINALIZADA );
+		setStatus(StatusEntrega.FINALIZADA);
 		setDataFinalizacao(OffsetDateTime.now());
+		}
 		
-		public boolean naopodeSerFinalizada() {
+		public boolean podeSerFinalzada() {
 			return StatusEntrega.PENDENTE.equals(getStatus());
 		}
+		
+		public boolean naoPodeSerFinalizada() {
+			return !podeSerFinalzada();
 	}
 
-	private boolean naopodeSerFinalizada() {
+	/*private boolean naopodeSerFinalizada() {
 		// TODO Auto-generated method stub
 		return false;
 	}
+
+	public List<Ocorrencia> getOcorrencias() {
+		// TODO Auto-generated method stub
+		return null;
+	}*/
 	
 }

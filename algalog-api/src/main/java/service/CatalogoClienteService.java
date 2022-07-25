@@ -16,6 +16,8 @@ public class CatalogoClienteService {
 
 	private ClienteRepository clienteRepository;
 	
+	//
+	
 	@Transactional
 	public Cliente salvar(Cliente cliente) {
 		boolean emailEmUso = clienteRepository.findByEmail(cliente.getEmail())
@@ -35,4 +37,4 @@ public class CatalogoClienteService {
 		clienteRepository.deleteById(clienteId);
 	}
 
-}
+} 

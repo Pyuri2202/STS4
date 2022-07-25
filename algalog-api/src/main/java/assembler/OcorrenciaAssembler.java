@@ -1,5 +1,7 @@
 package assembler;
 
+// Classe criada na aula 3.6 / 20:15
+
 import java.util.List;
 import java.util.stream.Collectors;
 
