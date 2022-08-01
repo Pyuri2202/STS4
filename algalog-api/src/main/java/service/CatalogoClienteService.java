@@ -16,8 +16,8 @@ public class CatalogoClienteService {
 
 	private ClienteRepository clienteRepository;
 	
-	//
-	
+	//stream = fluxo
+	//get = pegue ou definir
 	@Transactional
 	public Cliente salvar(Cliente cliente) {
 		boolean emailEmUso = clienteRepository.findByEmail(cliente.getEmail())

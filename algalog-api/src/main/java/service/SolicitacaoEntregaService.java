@@ -31,8 +31,7 @@ private EntregaRepository entregareposiroty;
 		Cliente cliente = CatalogoClienteService.buscar(entrega.getCliente(.getId()) ;
 		
 		
-	//
-		
+	//set=definir
 		entrega.setStatus(StatusEntrega.PENDENTE); 
 		entrega.setDataPedido(LocalDateTime.now());
 		

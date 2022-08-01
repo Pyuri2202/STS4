@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.lang.Boolean"/>
-    <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
     <fullyQualifiedTypeName name="org.modelmapper.internal.bytebuddy.implementation.bytecode.Throw"/>
     <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean"/>
     <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.support.JpaRepositoryFactory"/>
@@ -60,4 +58,6 @@
     <fullyQualifiedTypeName name="service.BuscaEntregaService"/>
     <fullyQualifiedTypeName name="domain.model.Entrega"/>
     <fullyQualifiedTypeName name="java.lang.Long"/>
+    <fullyQualifiedTypeName name="org.springframework.context.MessageSource"/>
+    <fullyQualifiedTypeName name="org.springframework.context.i18n.LocaleContextHolder"/>
 </qualifiedTypeNameHistroy>

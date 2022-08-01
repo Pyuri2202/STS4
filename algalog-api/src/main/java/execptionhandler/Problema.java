@@ -1,4 +1,4 @@
-package execptionahndler;
+package execptionhandler;
 
 import java.time.LocalDateTime;
 

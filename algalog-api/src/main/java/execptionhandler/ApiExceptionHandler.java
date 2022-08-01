@@ -1,9 +1,13 @@
- package execptionahndler;
+ package execptionhandler;
 
+ // Classe criada na aula 2.6 / 01:07
+ 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.context.MessageSource;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.http.HttpHeaders;
 
 import org.springframework.http.HttpStatus;
@@ -22,21 +26,22 @@ import domain.model.exception.NegocioException;
 @ControllerAdvice
 public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 	
+	private MessageSource messageSource;
+	
 	@Override
 	protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
-		
 			HttpHeaders headers, HttpStatus status, WebRequest request) {
 		List<Problema.campo> campo = new ArrayList<>();
 		
-		//
-		
+		// 2.6 / 11:18 
+		//getAllErrors = pegue todos erros
+		//getBindingResult = obter resultado de vinculação
 		for (ObjectError error : ex.getBindingResult().getAllErrors()) {
 			String nome = ((FieldError) error).getField();
-			String mensagem = error.getDefaultMessage();
+			String mensagem = messageSource.getMessage(error, LocaleContextHolder.getLocale());
 			
 		}
 		
-			
 		@ExceptionHandler(EntidadeNaoEncontradaException.class)
 		public ResponseEntity<Object> handleEntidadeNaoEncontrada(EntidadeNaoEncontradaException ex, WebRequest request) {
 			HttpStatus status = HttpStatus.NOT_FOUND;
@@ -54,7 +59,7 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 	public ResponseEntity<Object> handleNegocio(NegocioException ex, WebRequest request) {
 		HttpStatus status = HttpStatus.BAD_REQUEST;
 		
-		Problema problema = new Problema();
+		Problema problema = new Problema(); 
 		Problema.setStatus(status.value());
 		problema.setDataHora(LocalDateTime.now());
 		problema.setTitulo(ex.getMessage()); 
