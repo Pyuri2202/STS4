@@ -47,7 +47,7 @@ public class OcorrenciaController {
  	public java.util.List<OcorrenciaModel> listar(@PathVariable Long entregaId) {
  		Entrega entrega = buscaEntregaService.buscar(entregaId);
 
- 		return ocorrenciaAmssembler.toCollectionModel(entrega.getOcorrencias());
+ 		return ocorrenciaAmssembler.toCollectionModel(entrega.getOcorrencia());
 	}
 
 } 

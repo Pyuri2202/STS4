@@ -3,6 +3,7 @@ package controller;
 
 import java.util.List;
 
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.validation.Valid;
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import domain.model.Cliente;
 import lombok.AllArgsConstructor;
+import service.CatalogoClienteService;
 
 
 @AllArgsConstructor
@@ -30,17 +32,18 @@ public class ClienteController {
 	
 	@Autowired
 	private repository.ClienteRepository clienteRepository;
+	private CatalogoClienteService catalogoClienteService;
 	
 	@PersistenceContext
 	private EntityManager manager;
 	
 	@GetMapping("/clientes")
-	public List<Client> Listar() {
+	public List<Cliente> Listar() {
 	return clienteRepository.findAll();
 	}
 	
 	@GetMapping("/clientes/{clienteId")
-	public ResponseEntity<Client> buscar(@PathVariable Long clienteId) {
+	public ResponseEntity<Cliente> buscar(@PathVariable Long clienteId) {
 		return clienteRepository.findById(clienteId)
 			.map(ResponseEntity::ok)
 			.orElse(ResponseEntity.notFound().build()); }
@@ -48,7 +51,7 @@ public class ClienteController {
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public Cliente adicionar (@Valid @RequestBody Cliente cliente) {
-		return clienteRepository.save(cliente);
+		return catalogoClienteService.salvar(cliente);
 	}
 	
 	@PutMapping("/{clienteId}")
@@ -59,7 +62,7 @@ public class ClienteController {
 		}
 		
 		cliente.setId(clienteId); 
-		cliente = clienteRepository.save(cliente);
+		cliente = catalogoClienteService.salvar(cliente);
 		
 		return ResponseEntity.ok(cliente);
 	}
@@ -70,7 +73,7 @@ public class ClienteController {
 		return ResponseEntity.notFound().build();
 	}
 	
-	clienteRepository.deleteById(clienteId);
+	catalogoClienteService.excluir(clienteId);
 	
 	return ResponseEntity.noContent().build();
 	

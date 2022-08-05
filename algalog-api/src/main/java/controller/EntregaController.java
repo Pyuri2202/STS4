@@ -24,6 +24,8 @@ import domain.model.Entrega;
 import domain.model.EntregaModel;
 import domain.model.input.EntregaInput;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 import repository.EntregaRepository;
 import service.FinalizacaoEntregaService;
 import service.SolicitacaoEntregaService;
@@ -32,6 +34,8 @@ import common.ModelMapperConfig;
 @AllArgsConstructor
 @RestController
 @RequestMapping("/entregas")
+@Getter
+@Setter
 
 public class EntregaController {
 
@@ -67,9 +71,8 @@ public class EntregaController {
 	@GetMapping("/entregaId")
 	public ResponseEntity<EntregaModel> buscar(@PathVariable Long entregaId) {
 		return entregarepository.findById(entregaId)
-				.map(entrega -> ResponseEntity.ok(entregaAssembler.toModel(entrega)))
+			.map(entrega -> ResponseEntity.ok(entregaAssembler.toModel(entrega)))
 				.orElse(ResponseEntity.notFound().build());
-	
 	}
 	 
 }

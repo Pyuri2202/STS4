@@ -26,28 +26,40 @@ import domain.model.exception.NegocioException;
 @ControllerAdvice
 public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 	
-	private MessageSource messageSource;
+	//private MessageSource messageSource;
 	
 	@Override
 	protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
 			HttpHeaders headers, HttpStatus status, WebRequest request) {
-		List<Problema.campo> campo = new ArrayList<>();
+		List<Problema.Campo> campos = new ArrayList<>();
+		
+	
 		
 		// 2.6 / 11:18 
 		//getAllErrors = pegue todos erros
 		//getBindingResult = obter resultado de vinculação
 		for (ObjectError error : ex.getBindingResult().getAllErrors()) {
 			String nome = ((FieldError) error).getField();
-			String mensagem = messageSource.getMessage(error, LocaleContextHolder.getLocale());
+			String mensagem = error.getDefaultMessage();
 			
+			campos.add(new Problema.Campo(nome, mensagem));
 		}
+		Problema problema = new Problema();
+		problema.setStatus(status.value());
+		problema.setDataHora(LocalDateTime.now());
+		problema.setTitulo("Um ou mais campos estão inválidos. Faça o preenchimento correto e tente novamente"); 
+		problema.setCampos(campos);
+		
+		return handleExceptionInternal(ex, problema, headers, status, request);
+
+	}
 		
 		@ExceptionHandler(EntidadeNaoEncontradaException.class)
 		public ResponseEntity<Object> handleEntidadeNaoEncontrada(EntidadeNaoEncontradaException ex, WebRequest request) {
 			HttpStatus status = HttpStatus.NOT_FOUND;
 			
 			Problema problema = new Problema();
-			Problema.setStatus(status.value());
+			problema.setStatus(status.value());
 			problema.setDataHora(LocalDateTime.now());
 			problema.setTitulo(ex.getMessage()); 
 			
@@ -60,7 +72,7 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 		HttpStatus status = HttpStatus.BAD_REQUEST;
 		
 		Problema problema = new Problema(); 
-		Problema.setStatus(status.value());
+		problema.setStatus(status.value());
 		problema.setDataHora(LocalDateTime.now());
 		problema.setTitulo(ex.getMessage()); 
 		

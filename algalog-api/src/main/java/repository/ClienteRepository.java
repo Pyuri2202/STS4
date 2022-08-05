@@ -11,9 +11,10 @@ import org.springframework.stereotype.Repository;
 import domain.model.Cliente;
 
 @Repository
-public interface ClienteRepository extends JpaRepository<Client, Long> {
+public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 
-	List<Client> findByNome(String nome);
-	List<Client>findByNomeContaining (String nome);
+	List<Cliente> findByNome(String nome);
+	List<Cliente>findByNomeContaining (String nome);
+	List<Cliente>findByEmail(String nome);
 	Cliente save(@Valid Cliente cliente);
 }

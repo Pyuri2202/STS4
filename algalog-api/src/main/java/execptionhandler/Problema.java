@@ -20,37 +20,52 @@ public class Problema {
 	private Integer status;
 	private LocalDateTime dataHora;
 	private String titulo;
-	private List<campo> campos;
+	private List<Campo> campos;
 	
 	@AllArgsConstructor
 	@Getter
-	public static class campo {
+	public static class Campo {
 		
+		public Campo(String nome2, String mensagem2) {
+			// TODO Auto-generated constructor stub
+			nome = nome2;
+			mensagem = mensagem2;
+		}
 		private String nome;
 		private String mensagem;
 	}
 
-	public static void setStatus(int value) {
-		// TODO Auto-generated method stub
-		
+	public Integer getStatus() {
+		return status;
 	}
 
-
-	public void setDataHora(LocalDateTime now) {
-		// TODO Auto-generated method stub
-		
+	public void setStatus(Integer status) {
+		this.status = status;
 	}
 
-
-	public void setTitulo(String string) {
-		// TODO Auto-generated method stub
-		
+	public LocalDateTime getDataHora() {
+		return dataHora;
 	}
 
-
-	public void setCampos() {
-		// TODO Auto-generated method stub
-		
+	public void setDataHora(LocalDateTime dataHora) {
+		this.dataHora = dataHora;
 	}
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	public List<Campo> getCampos() {
+		return campos;
+	}
+
+	public void setCampos(List<Campo> campos) {
+		this.campos = campos;
+	}
+
 	
 }

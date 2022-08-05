@@ -1,6 +1,6 @@
 package repository;
 
-//classe criada na aula 3.1 Implementando solicitacao de entrega 18:46
+//classe criada na aula 3.1 / 18:46
 
 import java.util.List;
 
@@ -15,21 +15,17 @@ import domain.model.Entrega;
 
 		
 @Repository
-public class EntregaRepository extends JpaRepositoryExtension<Entrega, Long>{
+public interface EntregaRepository extends JpaRepository<Entrega, Long>{
   
-	public Entrega save(Entrega entrega) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public List<Entrega> findAll() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public Object findById(Long entregaId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	/*
+	 * public Entrega save(Entrega entrega) { // TODO Auto-generated method stub
+	 * return null; }
+	 * 
+	 * public List<Entrega> findAll() { // TODO Auto-generated method stub return
+	 * null; }
+	 * 
+	 * public Object findById(Long entregaId) { // TODO Auto-generated method stub
+	 * return null; }
+	 */
 
 }

@@ -20,7 +20,7 @@ public class FinalizacaoEntregaService {
 		
 	@Transactional
 	public void finalizar (Long entregaId) {
-		Entrega entrega = buscarEntregaService.Buscar(entregaId);
+		Entrega entrega = buscarEntregaService.buscar(entregaId);
 		
 		/*
 		// 3.7 / 03:14

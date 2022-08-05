@@ -39,6 +39,14 @@ import service.ValidationGroups;
 @Entity
 public class Entrega {
 
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
 	@EqualsAndHashCode.Include
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -53,11 +61,35 @@ public class Entrega {
 	private BigDecimal taxa;
 	
 	@OneToMany(mappedBy = "entrega", cascade = CascadeType.ALL)
-	private List<Ocorrencia> ocorrencias = new ArrayList<>();
+	private List<Ocorrencia> ocorrencia = new ArrayList<>();
 		
+	public List<Ocorrencia> getOcorrencia() {
+		return ocorrencia;
+	}
+
+	public void setOcorrencia(List<Ocorrencia> ocorrencia) {
+		this.ocorrencia = ocorrencia;
+	}
+
 	@Enumerated(EnumType.STRING)
 	private StatusEntrega status;
 		
+	public StatusEntrega getStatus() {
+		return status;
+	}
+
+	public void setStatus(StatusEntrega status) {
+		this.status = status;
+	}
+
+	public OffsetDateTime getDataPedido() {
+		return dataPedido;
+	}
+
+	public void setDataPedido(OffsetDateTime dataPedido) {
+		this.dataPedido = dataPedido;
+	}
+
 	private OffsetDateTime dataPedido;
 	
 	private OffsetDateTime dataFinalizacao;
@@ -72,11 +104,6 @@ public class Entrega {
 		return ocorrencia;
 		
 	}
-	/*
-	private BigDecimal getOcorrencia() {
-		// TODO Auto-generated method stub
-		return null;
-	}*/
 
 	//3.7 / 05:20
 	public void finalizar() {
@@ -88,6 +115,14 @@ public class Entrega {
 		setDataFinalizacao(OffsetDateTime.now());
 		}
 		
+		public OffsetDateTime getDataFinalizacao() {
+		return dataFinalizacao;
+	}
+
+	public void setDataFinalizacao(OffsetDateTime dataFinalizacao) {
+		this.dataFinalizacao = dataFinalizacao;
+	}
+
 		public boolean podeSerFinalzada() {
 			return StatusEntrega.PENDENTE.equals(getStatus());
 		}
@@ -96,14 +131,6 @@ public class Entrega {
 			return !podeSerFinalzada();
 	}
 
-	/*private boolean naopodeSerFinalizada() {
-		// TODO Auto-generated method stub
-		return false;
-	}
 
-	public List<Ocorrencia> getOcorrencias() {
-		// TODO Auto-generated method stub
-		return null;
-	}*/
 	
 }
