@@ -6,7 +6,6 @@ import java.util.List;
 
 import javax.validation.Valid;
 
-import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +18,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import assembler.EntregaAssembler;
-import assembler.OcorrenciaAssembler;
 import domain.model.Entrega;
 import domain.model.EntregaModel;
 import domain.model.input.EntregaInput;
@@ -29,7 +27,6 @@ import lombok.Setter;
 import repository.EntregaRepository;
 import service.FinalizacaoEntregaService;
 import service.SolicitacaoEntregaService;
-import common.ModelMapperConfig; 
 
 @AllArgsConstructor
 @RestController
